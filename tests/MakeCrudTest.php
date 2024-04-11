@@ -15,11 +15,9 @@ class MakeCrudTest extends BaseTest
     /**
      * Test check all files create when user run command 'crud:make'.
      *
-     * @test
-     *
      * @return void
      */
-    public function check_to_create_files_with_command_crud_make()
+    public function test_check_to_create_files_with_command_crud_make()
     {
         $this->artisan($this->command, ['name' => $this->name])
             ->expectsQuestion($this->question, 5);
@@ -34,11 +32,9 @@ class MakeCrudTest extends BaseTest
     /**
      * Test check all files create when user run command 'crud:make' with option seeder.
      *
-     * @test
-     *
      * @return void
      */
-    public function check_to_create_files_with_command_crud_make_with_option_seeder()
+    public function test_check_to_create_files_with_command_crud_make_with_option_seeder()
     {
         $this->artisan($this->command, ['name' => $this->name])
             ->expectsQuestion($this->question, 0)
@@ -58,11 +54,9 @@ class MakeCrudTest extends BaseTest
     /**
      * Test check all files create when user run command 'crud:make' with option service.
      *
-     * @test
-     *
      * @return void
      */
-    public function check_to_create_files_with_command_crud_make_with_option_service()
+    public function test_check_to_create_files_with_command_crud_make_with_option_service()
     {
         $this->artisan($this->command, ['name' => $this->name])
             ->expectsQuestion($this->question, 3)
@@ -79,11 +73,9 @@ class MakeCrudTest extends BaseTest
     /**
      * Test check all files create when user run command 'crud:make' with option repository.
      *
-     * @test
-     *
      * @return void
      */
-    public function check_to_create_files_with_command_crud_make_with_option_repository()
+    public function test_check_to_create_files_with_command_crud_make_with_option_repository()
     {
         $this->artisan($this->command, ['name' => $this->name])
             ->expectsQuestion($this->question, 3)
@@ -100,11 +92,9 @@ class MakeCrudTest extends BaseTest
     /**
      * Test check all files create when user run command 'crud:make' with option factory.
      *
-     * @test
-     *
      * @return void
      */
-    public function check_to_create_files_with_command_crud_make_with_option_factory()
+    public function test_check_to_create_files_with_command_crud_make_with_option_factory()
     {
         $this->artisan($this->command, ['name' => $this->name])
             ->expectsQuestion($this->question, 1)
@@ -120,11 +110,9 @@ class MakeCrudTest extends BaseTest
     /**
      * Test check all files create when user run command 'crud:make' with ies name.
      *
-     * @test
-     *
      * @return void
      */
-    public function check_to_create_files_with_command_crud_make_with_ies_name()
+    public function test_check_to_create_files_with_command_crud_make_with_ies_name()
     {
         $this->name = 'Category';
         $this->artisan($this->command, ['name' => $this->name])
@@ -140,11 +128,9 @@ class MakeCrudTest extends BaseTest
     /**
      * Test check all files create when user run command 'crud:make' with ies name with options.
      *
-     * @test
-     *
      * @return void
      */
-    public function check_to_create_files_with_command_crud_make_with_ies_name_with_options()
+    public function test_check_to_create_files_with_command_crud_make_with_ies_name_with_options()
     {
         $this->name = 'Category';
         $this->artisan($this->command, ['name' => $this->name])

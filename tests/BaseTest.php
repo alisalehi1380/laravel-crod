@@ -22,10 +22,8 @@ class BaseTest extends \Orchestra\Testbench\TestCase
 
     /**
      * Is a fake test.
-     *
-     * @test
      */
-    public function success(): void
+    public function test_success(): void
     {
         $this->assertEquals(1, 1);
     }
