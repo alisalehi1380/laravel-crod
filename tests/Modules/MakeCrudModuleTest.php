@@ -28,9 +28,10 @@ class MakeCrudModuleTest extends BaseTest
      */
     public function test_check_to_create_files_with_command_crud_make()
     {
+        $this->withoutExceptionHandling();
         $this->artisan($this->command, [
             'module_name' => $this->name,
-        ]);
+        ])->expectsQuestion('Do you want something extra?', 5);
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToMigrationIsCreatedWithOriginalName();
