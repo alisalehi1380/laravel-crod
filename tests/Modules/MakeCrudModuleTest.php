@@ -120,8 +120,8 @@ class MakeCrudModuleTest extends BaseTest
         $modelFolderName = config('laravel-crod.modules.request_path', 'Http\Requests');
         $filename = base_path("$this->module\\$this->name\\$modelFolderName\\");
 
-        $this->assertEquals(1, file_exists($filename . "ProductStoreRequest.php"));
-        $this->assertEquals(1, file_exists($filename . "ProductUpdateRequest.php"));
+        $this->assertEquals(1, file_exists($filename.'ProductStoreRequest.php'));
+        $this->assertEquals(1, file_exists($filename.'ProductUpdateRequest.php'));
     }
 
     private function checkAllToViewIsCreatedWithOriginalName(): void
