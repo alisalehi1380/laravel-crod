@@ -6,4 +6,4 @@ composer.lock
 /reports
 todos.txt
 /coverage
-phpunit.xml.dist
+phpunit.xml
