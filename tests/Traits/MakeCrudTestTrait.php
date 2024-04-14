@@ -56,13 +56,12 @@ trait MakeCrudTestTrait
         $this->assertEquals($controller, basename($filename, '.php'));
     }
 
-    private function checkAllToRequestIsCreatedWithOriginalName(): void
+    private function checkAllToRequestIsCreatedWithOriginalName($name): void
     {
-        $request = $this->name.'Request';
-        $filename = app_path("Http\\Requests\\$request.php");
+        $filename = app_path("Http\\Requests\\");
 
-        $this->assertEquals(1, file_exists($filename));
-        $this->assertEquals($request, basename($filename, '.php'));
+        $this->assertEquals(1, file_exists($filename . $name . "StoreRequest.php"));
+        $this->assertEquals(1, file_exists($filename . $name . "UpdateRequest.php"));
     }
 
     private function checkAllToViewIsCreatedWithOriginalName(string $name): void
