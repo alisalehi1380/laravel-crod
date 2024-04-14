@@ -37,7 +37,8 @@ class MakeCrudTest extends BaseTest
     public function test_check_to_create_files_with_command_crud_make_with_option_seeder()
     {
         $this->artisan($this->command, ['name' => $this->name])
-            ->expectsQuestion($this->question, 0);
+            ->expectsQuestion($this->question, 0)
+            ->assertFailed();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToMigrationIsCreatedWithOriginalName();
@@ -58,7 +59,8 @@ class MakeCrudTest extends BaseTest
     public function test_check_to_create_files_with_command_crud_make_with_option_service()
     {
         $this->artisan($this->command, ['name' => $this->name])
-            ->expectsQuestion($this->question, 3);
+            ->expectsQuestion($this->question, 3)
+            ->assertFailed();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToMigrationIsCreatedWithOriginalName();
@@ -76,7 +78,8 @@ class MakeCrudTest extends BaseTest
     public function test_check_to_create_files_with_command_crud_make_with_option_repository()
     {
         $this->artisan($this->command, ['name' => $this->name])
-            ->expectsQuestion($this->question, 3);
+            ->expectsQuestion($this->question, 3)
+            ->assertFailed();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToMigrationIsCreatedWithOriginalName();
@@ -94,7 +97,8 @@ class MakeCrudTest extends BaseTest
     public function test_check_to_create_files_with_command_crud_make_with_option_factory()
     {
         $this->artisan($this->command, ['name' => $this->name])
-            ->expectsQuestion($this->question, 1);
+            ->expectsQuestion($this->question, 1)
+            ->assertFailed();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToMigrationIsCreatedWithOriginalName();
@@ -135,7 +139,8 @@ class MakeCrudTest extends BaseTest
 //            ->expectsQuestion($this->question, 2)
 //            ->expectsQuestion($this->question, 3)
 //            ->expectsQuestion($this->question, 4)
-            ->expectsQuestion($this->question, 5);
+            ->expectsQuestion($this->question, 5)
+            ->assertFailed();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToControllerIsCreatedWithOriginalName();
