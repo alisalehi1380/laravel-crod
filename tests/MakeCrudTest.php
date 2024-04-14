@@ -38,7 +38,7 @@ class MakeCrudTest extends BaseTest
     {
         $this->artisan($this->command, ['name' => $this->name])
             ->expectsQuestion($this->question, 0)
-            ->expectsOutputToContain('created successfully');
+            ->assertSuccessful();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToMigrationIsCreatedWithOriginalName();
@@ -60,7 +60,7 @@ class MakeCrudTest extends BaseTest
     {
         $this->artisan($this->command, ['name' => $this->name])
             ->expectsQuestion($this->question, 3)
-            ->expectsOutputToContain('created successfully');
+            ->assertSuccessful();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToMigrationIsCreatedWithOriginalName();
@@ -79,7 +79,7 @@ class MakeCrudTest extends BaseTest
     {
         $this->artisan($this->command, ['name' => $this->name])
             ->expectsQuestion($this->question, 3)
-            ->expectsOutputToContain('created successfully');
+            ->assertSuccessful();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToMigrationIsCreatedWithOriginalName();
@@ -98,7 +98,7 @@ class MakeCrudTest extends BaseTest
     {
         $this->artisan($this->command, ['name' => $this->name])
             ->expectsQuestion($this->question, 1)
-            ->expectsOutputToContain('created successfully');
+            ->assertSuccessful();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToMigrationIsCreatedWithOriginalName();
@@ -140,7 +140,7 @@ class MakeCrudTest extends BaseTest
 //            ->expectsQuestion($this->question, 3)
 //            ->expectsQuestion($this->question, 4)
             ->expectsQuestion($this->question, 5)
-            ->expectsOutputToContain('created successfully');
+            ->assertSuccessful();
 
         $this->checkAllToModelIsCreatedWithOriginalName();
         $this->checkAllToControllerIsCreatedWithOriginalName();
