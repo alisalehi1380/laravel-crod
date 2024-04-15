@@ -18,6 +18,28 @@ class MakeCrudCommandTest extends TestCase
             ->assertSuccessful()
             ->expectsOutput('Crud files successfully generated...');
 
+        $this->ensureCrudFileCreated();
+    }
+
+    /**
+     * Test crud files created successfully with seeder.
+     */
+    #[Test]
+    public function crud_files_created_successfully_with_seeder(): void
+    {
+        $this->artisan('crud:make', ['name' => 'Product'])
+            ->expectsQuestion('Do you want something extra?', 0)
+            ->assertSuccessful()
+            ->expectsOutput('Crud files successfully generated...');
+
+        $this->ensureCrudFileCreated();
+    }
+
+    /**
+     * Ensure the crud files successfully created.
+     */
+    protected function ensureCrudFileCreated(): void
+    {
         // Model
         $this->assertFileExists(app_path('Models/Product.php'));
 
