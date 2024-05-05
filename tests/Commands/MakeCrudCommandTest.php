@@ -28,6 +28,7 @@ class MakeCrudCommandTest extends TestCase
     public function crud_files_created_successfully_with_seeder(): void
     {
         $this->artisan('crud:make', ['name' => 'Product'])
+            ->expectsQuestion('Do you want something extra?', 1)
             ->expectsQuestion('Do you want something extra?', 0)
             ->assertSuccessful()
             ->expectsOutput('Crud files successfully generated...');
