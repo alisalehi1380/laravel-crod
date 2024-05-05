@@ -56,6 +56,23 @@ class MakeCrudCommandTest extends TestCase
     }
 
     /**
+     * Test crud files created successfully with repository.
+     */
+    #[Test]
+    public function crud_files_created_successfully_with_repository(): void
+    {
+        $this->artisan('crud:make', ['name' => 'Product'])
+            ->expectsQuestion('Do you want something extra?', 3)
+            ->expectsQuestion('Do you want something extra?', 0)
+            ->assertSuccessful()
+            ->expectsOutput('Crud files successfully generated...');
+
+        $this->ensureCrudFileCreated();
+
+        $this->assertFileExists(app_path('Repositories/ProductRepo.php'));
+    }
+
+    /**
      * Ensure the crud files successfully created.
      */
     protected function ensureCrudFileCreated(): void
