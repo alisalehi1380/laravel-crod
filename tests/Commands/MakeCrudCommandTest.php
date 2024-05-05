@@ -33,6 +33,8 @@ class MakeCrudCommandTest extends TestCase
             ->expectsOutput('Crud files successfully generated...');
 
         $this->ensureCrudFileCreated();
+
+        $this->assertFileExists(database_path('seeders/ProductSeeder.php'));
     }
 
     /**

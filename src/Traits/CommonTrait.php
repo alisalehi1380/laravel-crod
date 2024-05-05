@@ -13,7 +13,7 @@ trait CommonTrait
      */
     private function extraOption(): string|array
     {
-        return $this->choice('Do you want something extra?', OptionData::$options, 5);
+        return $this->choice('Do you want something extra?', OptionData::$options, 0);
     }
 
     /**
@@ -27,23 +27,23 @@ trait CommonTrait
     {
         $selectOption = $this->extraOption();
 
-        if ($selectOption === OptionData::SEEDER_OPTION) {
+        if (OptionData::$options[$selectOption] === OptionData::SEEDER_OPTION) {
             $this->makeSeeder($name_uc);
             $this->extraOptionOperation($name_uc);
         }
-        if ($selectOption === OptionData::FACTORY_OPTION) {
+        if (OptionData::$options[$selectOption] === OptionData::FACTORY_OPTION) {
             $this->makeFactory($name_uc);
             $this->extraOptionOperation($name_uc);
         }
-        if ($selectOption === OptionData::REPOSITORY_OPTION) {
+        if (OptionData::$options[$selectOption] === OptionData::REPOSITORY_OPTION) {
             $this->makeRepository($name_uc);
             $this->extraOptionOperation($name_uc);
         }
-        if ($selectOption === OptionData::SERVICE_OPTION) {
+        if (OptionData::$options[$selectOption] === OptionData::SERVICE_OPTION) {
             $this->makeService($name_uc);
             $this->extraOptionOperation($name_uc);
         }
-        if ($selectOption === OptionData::TEST_OPTION) {
+        if (OptionData::$options[$selectOption] === OptionData::TEST_OPTION) {
             $this->makeTest($name_uc);
             $this->extraOptionOperation($name_uc);
         }
