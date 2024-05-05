@@ -108,6 +108,26 @@ class MakeCrudCommandTest extends TestCase
     }
 
     /**
+     * Test crud files created successfully with tests.
+     */
+    #[Test]
+    public function crud_files_created_successfully_with_tests_using_pest(): void
+    {
+        config()->set(['laravel-crod.are_using_pest', true]);
+
+        $this->artisan('crud:make', ['name' => 'Product'])
+            ->expectsQuestion('Do you want something extra?', 5)
+            ->expectsQuestion('Do you want something extra?', 0)
+            ->assertSuccessful()
+            ->expectsOutput('Crud files successfully generated...');
+
+        $this->ensureCrudFileCreated();
+
+        $this->assertFileExists(base_path('tests/Feature/ProductTest.php'));
+        $this->assertFileExists(base_path('tests/Unit/ProductTest.php'));
+    }
+
+    /**
      * Ensure the crud files successfully created.
      */
     protected function ensureCrudFileCreated(): void
