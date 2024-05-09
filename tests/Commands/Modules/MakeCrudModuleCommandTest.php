@@ -13,12 +13,30 @@ class MakeCrudModuleCommandTest extends TestCase
     #[Test]
     public function crud_files_created_successfully(): void
     {
-        $this->artisan('crud:make', ['name' => 'Product'])
+        $this->artisan('crud:make-module', ['module_name' => 'Product'])
             ->expectsQuestion('Do you want something extra?', 0)
             ->assertSuccessful()
             ->expectsOutput('Crud files successfully generated...');
 
         $this->ensureCrudFileCreated();
+    }
+
+    /**
+     * Test crud files created successfully with seeder.
+     */
+    #[Test]
+    public function crud_files_created_successfully_with_seeder(): void
+    {
+        $this->artisan('crud:make-module', ['module_name' => 'Product'])
+            ->expectsQuestion('Do you want something extra?', 1)
+            ->expectsQuestion('Do you want something extra?', 0)
+            ->assertSuccessful()
+            ->expectsOutput('Crud files successfully generated...');
+
+        $this->ensureCrudFileCreated();
+
+        // Ensure seeder exists
+        $this->assertFileExists(base_path('Modules/Product/Database/Seeders/ProductSeeder.php'));
     }
 
     /**
