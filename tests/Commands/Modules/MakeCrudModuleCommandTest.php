@@ -40,6 +40,24 @@ class MakeCrudModuleCommandTest extends TestCase
     }
 
     /**
+     * Test crud files created successfully with factory.
+     */
+    #[Test]
+    public function crud_files_created_successfully_with_factory(): void
+    {
+        $this->artisan('crud:make-module', ['module_name' => 'Product'])
+            ->expectsQuestion('Do you want something extra?', 2)
+            ->expectsQuestion('Do you want something extra?', 0)
+            ->assertSuccessful()
+            ->expectsOutput('Crud files successfully generated...');
+
+        $this->ensureCrudFileCreated();
+
+        // Ensure factory exists
+        $this->assertFileExists(base_path('Modules/Product/Database/Factories/ProductFactory.php'));
+    }
+
+    /**
      * Ensure the crud files successfully created.
      */
     protected function ensureCrudFileCreated(string $modelFolder = 'Entities'): void
