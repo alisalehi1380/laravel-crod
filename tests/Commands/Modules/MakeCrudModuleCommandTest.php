@@ -76,6 +76,24 @@ class MakeCrudModuleCommandTest extends TestCase
     }
 
     /**
+     * Test crud files created successfully with service.
+     */
+    #[Test]
+    public function crud_files_created_successfully_with_service(): void
+    {
+        $this->artisan('crud:make-module', ['module_name' => 'Product'])
+            ->expectsQuestion('Do you want something extra?', 4)
+            ->expectsQuestion('Do you want something extra?', 0)
+            ->assertSuccessful()
+            ->expectsOutput('Crud files successfully generated...');
+
+        $this->ensureCrudFileCreated();
+
+        // Ensure service exists
+        $this->assertFileExists(base_path('Modules/Product/Services/ProductService.php'));
+    }
+
+    /**
      * Ensure the crud files successfully created.
      */
     protected function ensureCrudFileCreated(string $modelFolder = 'Entities'): void
