@@ -21,6 +21,14 @@ class MakeQueryCommandTest extends TestCase
             ->assertSuccessful()
             ->expectsOutput('Crud files successfully generated...');
 
+        $this->ensureCrudFilesExistsWithCorrectData();
+    }
+
+    /**
+     * Ensure all crud files exists with correct data.
+     */
+    protected function ensureCrudFilesExistsWithCorrectData(): void
+    {
         // Model
         $this->assertFileContains([
             '<?php',
@@ -51,7 +59,7 @@ class MakeQueryCommandTest extends TestCase
             'public function rules(): array',
         ], 'app/Http/Requests/ProductUpdateRequest.php');
 
-        // View
+        // Views
         $this->assertFileContains(['{{-- Start to write code - milwad-dev --}}'], 'resources/views/products/index.blade.php');
         $this->assertFileContains(['{{-- Start to write code - milwad-dev --}}'], 'resources/views/products/create.blade.php');
         $this->assertFileContains(['{{-- Start to write code - milwad-dev --}}'], 'resources/views/products/edit.blade.php');
