@@ -2,6 +2,7 @@
 
 namespace Milwad\LaravelCrod\Tests\Commands;
 
+use Illuminate\Support\Facades\Artisan;
 use Milwad\LaravelCrod\Tests\TestCase;
 use Orchestra\Testbench\Concerns\InteractsWithPublishedFiles;
 use PHPUnit\Framework\Attributes\Test;
@@ -17,6 +18,13 @@ class MakeQueryCommandTest extends TestCase
     public function all_files_are_exists_with_correct_data(): void
     {
         $this->artisan('crud:make', ['name' => 'Product'])
+            ->expectsQuestion('Do you want something extra?', 0)
+            ->assertSuccessful()
+            ->expectsOutput('Crud files successfully generated...');
+
+        Artisan::call('migrate');
+
+        $this->artisan('crud:query', ['table_name' => 'products', 'model' => 'Product'])
             ->expectsQuestion('Do you want something extra?', 0)
             ->assertSuccessful()
             ->expectsOutput('Crud files successfully generated...');
