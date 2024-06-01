@@ -3,6 +3,7 @@
 namespace Milwad\LaravelCrod\Tests\Commands;
 
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use Milwad\LaravelCrod\Tests\TestCase;
 use Orchestra\Testbench\Concerns\InteractsWithPublishedFiles;
 use PHPUnit\Framework\Attributes\Test;
