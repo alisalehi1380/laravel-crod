@@ -15,7 +15,7 @@ You can make automatically fillable for models, query for repositories and servi
 
 Docs: https://github.com/milwad-dev/laravel-crod/wiki
 
-# Requirements
+## Requirements
 
 ***
 
@@ -31,7 +31,7 @@ Docs: https://github.com/milwad-dev/laravel-crod/wiki
 | 1.3  | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | 1.4  | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
-# Installation
+## Installation
 
 ***
 
@@ -45,7 +45,7 @@ After installation, you need to publish config files. <br>
 php artisan vendor:publish --provider="Milwad\LaravelCrod\LaravelCrodServiceProvider" --tag="laravel-crod-config"
 ```
 
-# Check active commands
+## Check active commands
 
 When you install the `Laravel Crod`, a series of commands will be activated for you. For see these commands, you can run below command: <br>
 
@@ -53,12 +53,9 @@ When you install the `Laravel Crod`, a series of commands will be activated for 
 php artisan
 ```
 
-<br>
-
-You must see this command in your terminal:
 ![Crod commands](https://s6.uupload.ir/files/carbon_(1)_tqmq.png "Crod commands")
 
-# Make CRUD files
+## Make CRUD files
 
 For creating crud files, you need to run the `crud:make` command in your terminal: <br>
 
@@ -78,9 +75,9 @@ When you execute this command, after creating the files, you will see a list of 
 
 ✅ After, you can see `Laravel Crod` creates crud files such as `Model`, `Controller`, `Form-Requests`, `Migrations` etc.
 
-# CRUD query
+## CRUD query
 
-This command adds query and date to CRUD files. <br>
+ <br>
 
 <strong>** You must run the migrate command. ** </strong> <br>
 
@@ -104,7 +101,7 @@ When write `--id-controller` option add function without route model binding.
 
 <font color="info">After you can see add query to service, repository, controller, model, etc.</font>
 
-# CRUD for module
+## CRUD for module
 
 Run this command in the terminal, This command created CRUD file for module.
 
@@ -120,7 +117,7 @@ php artisan crud:make-module Product
 
 When you execute this command, after creating the files, you will see a list of options that will create a series of additional files for you, which of course are optional, you can choose and if you need, it will create additional files for you such as `seeder`, `factory`, `repository`, etc.
 
-# CRUD query from module
+## CRUD query from module
 
 <font color="succe">This command adds query and date to CRUD files for module.</font> <br>
 
