@@ -75,31 +75,38 @@ When you execute this command, after creating the files, you will see a list of 
 
 ✅ After, you can see `Laravel Crod` creates crud files such as `Model`, `Controller`, `Form-Requests`, `Migrations` etc.
 
-## CRUD query
+## CRUD Query
 
- <br>
+If you run `crud:query` command, the result is:
 
-<strong>** You must run the migrate command. ** </strong> <br>
+- Add `index`, `create`, `store`, `edit`, `update`, `destroy` function to your controller
+- Get all migration columns and move it to your model fillable
+- Add `index`, `findById`, `delete` functions to your repositories
+- Add `store`, `update` functions to your services
+- Add resource route (SOON)
+
+<strong>** You must run the migrate command, before `crud:query` command. ** </strong> <br>
 
 ```bash
 php artisan migrate
 ```
 
-Run this command in the terminal. <br>
+For using automatic query, you can run below command:
 
 ```bash
 php artisan crud:query {table_name} {model} {--id-controller}
 ```
 
-For example
+For example:
 
 ```bash
 php artisan crud:query products Product
 ```
 
 When write `--id-controller` option add function without route model binding.
+When you add `--id-controller` option, the `Laravel Crod` create crud functions without [Route Model Binding](https://laravel.com/docs/routing#route-model-binding) in controller.
 
-<font color="info">After you can see add query to service, repository, controller, model, etc.</font>
+After you can see `Laravel Crod` added query to service, repository, controller, model, etc.
 
 ## CRUD for module
 
