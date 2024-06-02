@@ -110,13 +110,13 @@ After you can see `Laravel Crod` added query to service, repository, controller,
 
 ## CRUD for module
 
-Run this command in the terminal, This command created CRUD file for module.
+If you are using Modular Architecture, you are able to run `crud:make-module` command. This command create a new module and create the default crud files such as `Model`, `Controller`, `Migration`, etc:
 
 ```bash
 php artisan crud:make-module {module_name}
 ```
 
-For example
+For example:
 
 ```bash
 php artisan crud:make-module Product
