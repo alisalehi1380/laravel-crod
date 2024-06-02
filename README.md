@@ -149,9 +149,13 @@ php artisan crud:query-module products Product --id-controller
 When you add `--id-controller` option, the `Laravel Crod` create crud functions without [Route Model Binding](https://laravel.com/docs/routing#route-model-binding) in controller.
 
 After you can see `Laravel Crod` added query to service, repository, controller, model, ... for your module.
+
 ## Custom path
 
-You can custom file path in config file. ```config/laravel-crod.php```
+You can custom file path in config file. ``````
+
+With `Laravel Crod` config, you can customize the commands, for example you want to set the route file name.
+This config file exists in `config/laravel-crod.php`:
 
 ```php
 <?php
@@ -233,8 +237,6 @@ return [
     ],
 ];
 ```
-
-This config file is very helpful to custom path or latest name file.
 
 ## License
 
