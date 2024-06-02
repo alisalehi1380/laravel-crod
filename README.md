@@ -103,12 +103,11 @@ For example:
 php artisan crud:query products Product
 ```
 
-When write `--id-controller` option add function without route model binding.
 When you add `--id-controller` option, the `Laravel Crod` create crud functions without [Route Model Binding](https://laravel.com/docs/routing#route-model-binding) in controller.
 
 After you can see `Laravel Crod` added query to service, repository, controller, model, etc.
 
-## CRUD for module
+## CRUD for Module
 
 If you are using Modular Architecture, you are able to run `crud:make-module` command. This command create a new module and create the default crud files such as `Model`, `Controller`, `Migration`, etc:
 
@@ -124,17 +123,18 @@ php artisan crud:make-module Product
 
 When you execute this command, after creating the files, you will see a list of options that will create a series of additional files for you, which of course are optional, you can choose and if you need, it will create additional files for you such as `seeder`, `factory`, `repository`, etc.
 
-## CRUD query from module
+## CRUD Query for Module
 
-<font color="succe">This command adds query and date to CRUD files for module.</font> <br>
+This command adds query and date to CRUD files for module.
+This command is similar to `crud:query` command, but this command is for module. if you have a modular you can write your module name and `Laravel Crod` find it automatically.
 
-<font color="yellow">** You must run your migration file. ** </font> <br>
+** You must run your migration file **
 
 ```
 php artisan crud:query-module {table_name} {model} {--id-controller}
 ```
 
-For example
+For example:
 
 ```bash
 php artisan crud:query-module products Product
@@ -146,10 +146,9 @@ OR
 php artisan crud:query-module products Product --id-controller
 ```
 
-When write --id-controller option add function without route model binding.
+When you add `--id-controller` option, the `Laravel Crod` create crud functions without [Route Model Binding](https://laravel.com/docs/routing#route-model-binding) in controller.
 
-<font color="info">After you can see add query to service, repository, controller, model, etc for module.</font>
-
+After you can see `Laravel Crod` added query to service, repository, controller, model, ... for your module.
 ## Custom path
 
 You can custom file path in config file. ```config/laravel-crod.php```
