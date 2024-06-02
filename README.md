@@ -9,10 +9,9 @@
 [![PHP Version Require](http://poser.pugx.org/milwad/laravel-crod/require/php)](https://packagist.org/packages/milwad/laravel-crod)
 
 ***
-Laravel crod is a package for implementing CRUD faster and easier. <br>
-You can create controllers, models, migrations, services, repositories, views and requests quickly. <br>
-You can make automatically fillable for models, query for repositories and services, make resource functions for
-controllers, and a lot of options.
+Laravel crod is a package for implementing CRUD faster and easier.
+You can create controllers, models, migrations, services, repositories, views and requests quickly.
+You can make automatically fillable for models, query for repositories and services, make resource controllers, and a lot of options.
 
 Docs: https://github.com/milwad-dev/laravel-crod/wiki
 
@@ -24,12 +23,13 @@ Docs: https://github.com/milwad-dev/laravel-crod/wiki
 - `Laravel framework: ^9`
 - `doctrine/dbal: ^3.6`
 
-| Crod | L7                 | L8                 | L9                 | L10                |
-|------|--------------------|--------------------|--------------------|--------------------|
-| 1.0  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
-| 1.1  | :x:                | :x:                | :white_check_mark: | :white_check_mark: |
-| 1.2  | :x:                | :x:                | :white_check_mark: | :white_check_mark: |
-| 1.3  | :x:                | :x:                | :white_check_mark: | :white_check_mark: |
+| Crod | L7                 | L8                 | L9                 | L10                | L11                |
+|------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 1.0  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                |
+| 1.1  | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 1.2  | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 1.3  | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 1.4  | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 # Installation
 
@@ -39,7 +39,7 @@ Docs: https://github.com/milwad-dev/laravel-crod/wiki
 composer require milwad/laravel-crod
 ```
 
-After publish config files.<br>
+After installation, you need to publish config files. <br>
 
 ```bash
 php artisan vendor:publish --provider="Milwad\LaravelCrod\LaravelCrodServiceProvider" --tag="laravel-crod-config"
@@ -47,7 +47,7 @@ php artisan vendor:publish --provider="Milwad\LaravelCrod\LaravelCrodServiceProv
 
 # Check active commands
 
-Run the command in cmd or terminal. <br>
+When you install the `Laravel Crod`, a series of commands will be activated for you. For see these commands, you can run below command: <br>
 
 ```bash
 php artisan
@@ -55,12 +55,12 @@ php artisan
 
 <br>
 
-You must see this command in the terminal.
+You must see this command in your terminal:
 ![Crod commands](https://s6.uupload.ir/files/carbon_(1)_tqmq.png "Crod commands")
 
 # Make CRUD files
 
-<font color="succe">This command creates CRUD files</font>, Run this command in the terminal. <br>
+For creating crud files, you need to run the `crud:make` command in your terminal: <br>
 
 ```bash
 php artisan crud:make {name}
@@ -76,7 +76,7 @@ php artisan crud:make Product
 
 When you execute this command, after creating the files, you will see a list of options that will create a series of additional files for you, which of course are optional, you can choose and if you need, it will create additional files for you such as `seeder`, `factory`, `repository`, etc.
 
-✅ After you can see crod creates files for crud
+✅ After, you can see `Laravel Crod` creates crud files such as `Model`, `Controller`, `Form-Requests`, `Migrations` etc.
 
 # CRUD query
 
