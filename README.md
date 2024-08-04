@@ -2,16 +2,16 @@
 
 <img src="https://banners.beyondco.de/Laravel%20Crod.png?theme=light&packageManager=composer+require&packageName=milwad%2Flaravel-crod&pattern=architect&style=style_1&description=Generate+crud+files+easy&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg" />
 
-[![Latest Stable Version](http://poser.pugx.org/milwad/laravel-crod/v)](https://packagist.org/packages/milwad/laravel-crod)
-[![Total Downloads](http://poser.pugx.org/milwad/laravel-crod/downloads)](https://packagist.org/packages/milwad/laravel-crod)
-[![License](http://poser.pugx.org/milwad/laravel-crod/license)](https://packagist.org/packages/milwad/laravel-crod)
+[![PHP Version Require](https://img.shields.io/packagist/dependency-v/milwad/laravel-crod/php.svg)](https://packagist.org/packages/milwad/laravel-crod)
+[![Latest Stable Version](https://img.shields.io/packagist/v/milwad/laravel-crod.svg)](https://packagist.org/packages/milwad/laravel-crod)
+[![Total Downloads](https://img.shields.io/packagist/dt/milwad/laravel-crod.svg)](https://packagist.org/packages/milwad/laravel-crod)
+[![License](https://img.shields.io/packagist/l/milwad/laravel-crod.svg)](https://packagist.org/packages/milwad/laravel-crod)
 [![Passed Tests](https://github.com/milwad-dev/laravel-crod/actions/workflows/run-tests.yml/badge.svg)](https://github.com/milwad-dev/laravel-crod/actions/workflows/run-tests.yml)
-[![PHP Version Require](http://poser.pugx.org/milwad/laravel-crod/require/php)](https://packagist.org/packages/milwad/laravel-crod)
 
 ***
 Laravel crod is a package for implementing CRUD faster and easier.
-You can create controllers, models, migrations, services, repositories, views and requests quickly.
-You can make automatically fillable for models, query for repositories and services, make resource controllers, and a lot of options.
+You can quickly create controllers, models, migrations, services, repositories, views and requests.
+You can make it automatically fillable for models, query for repositories and services, make resource controllers, and have a lot of options.
 
 Docs: https://github.com/milwad-dev/laravel-crod/wiki
 
